@@ -301,15 +301,15 @@
     <h2>איך יוצאים לדרך</h2>
     <p class="lead muted">חמישה דברים לסמן וי, בערך שעה בסך הכל. לחצו על כל שלב לפרטים.</p>
     <div class="steps">
-      <details class="step"><summary><span class="n">1</span><span class="ttl">חתימה על הסכם ההתקשרות</span><span class="plus"></span></summary>
+      <details class="step" name="onboarding"><summary><span class="n">1</span><span class="ttl">חתימה על הסכם ההתקשרות</span><span class="plus"></span></summary>
         <div class="body"><p>נשלח אליכם בוואטסאפ, נחתם דיגיטלית מהנייד. יש בו סעיף יציאה, כדי שתישארו כי זה עובד ולא כי חתמתם.</p></div></details>
-      <details class="step"><summary><span class="n">2</span><span class="ttl">תיאום הפגישה הראשונה</span><span class="plus"></span></summary>
+      <details class="step" name="onboarding"><summary><span class="n">2</span><span class="ttl">תיאום הפגישה הראשונה</span><span class="plus"></span></summary>
         <div class="body"><p>בוחרים שעה שנוחה מהיומן שלי. משם והלאה כל פגישה נקבעת מראש, ואתם לא צריכים לרדוף אחריי.</p></div></details>
-      <details class="step"><summary><span class="n">3</span><span class="ttl">מילוי שאלון הכניסה</span><span class="plus"></span></summary>
+      <details class="step" name="onboarding"><summary><span class="n">3</span><span class="ttl">מילוי שאלון הכניסה</span><span class="plus"></span></summary>
         <div class="body"><p>יעדים והיכרות. זה מה שמאפשר לי להגיע לפגישה הראשונה כשאני כבר מכירה אתכם ואת מה שחשוב לכם.</p></div></details>
-      <details class="step"><summary><span class="n">4</span><span class="ttl">איסוף המסמכים</span><span class="plus"></span></summary>
+      <details class="step" name="onboarding"><summary><span class="n">4</span><span class="ttl">איסוף המסמכים</span><span class="plus"></span></summary>
         <div class="body"><p>פירוט אשראי ועובר ושב של 3 חודשים, תלושים, הר הכסף, הר הביטוח, דוח נתוני אשראי, והלוואות אם יש. תקבלו רשימה מלאה עם הסבר איפה מוצאים כל דבר. חשוב שיגיעו שבוע לפני הפגישה הראשונה, כדי שאספיק לעבור עליהם לעומק.</p></div></details>
-      <details class="step"><summary><span class="n">5</span><span class="ttl">פתיחת הקורס הדיגיטלי</span><span class="plus"></span></summary>
+      <details class="step" name="onboarding"><summary><span class="n">5</span><span class="ttl">פתיחת הקורס הדיגיטלי</span><span class="plus"></span></summary>
         <div class="body"><p>קורס "התנהלות כלכלית" נפתח לכם במייל ומלווה אתכם לצד הפגישות, בקצב שלכם.</p></div></details>
     </div>
   </div>
@@ -446,5 +446,20 @@
   </div>
 </footer>
 
+<script>
+// אקורדיון אחד-בכל-רגע (גיבוי לדפדפנים שלא תומכים ב-name על details)
+(function(){
+  var steps = document.querySelectorAll('details.step');
+  if (!steps.length) return;
+  var supported = 'name' in document.createElement('details');
+  if (supported) return;
+  steps.forEach(function(d){
+    d.addEventListener('toggle', function(){
+      if (!d.open) return;
+      steps.forEach(function(o){ if (o !== d) o.open = false; });
+    });
+  });
+})();
+</script>
 </body>
 </html>
