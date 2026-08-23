@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>סוויץ' · כל התהליך במקום אחד · RichLife</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pine:#5F8A6F; --pine-d:#4A6E58; --sage:#9FC6A9;
+    --cream:#EEF3EF; --paper:#FBFCFB; --ink:#1E2B25;
+    --line:rgba(30,43,37,.11); --muted:rgba(30,43,37,.63);
+    --wash:#E4EDE6;
+    --r:20px; --max:940px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Heebo,system-ui,sans-serif;background:var(--paper);color:var(--ink);
+       font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 22px}
+  section{padding:72px 0}
+  .tint{background:var(--cream)}
+  .muted{color:var(--muted)}
+  .eyebrow{font-size:13px;font-weight:700;letter-spacing:.14em;color:var(--pine);
+           text-transform:uppercase;margin-bottom:14px}
+  h1{font-size:clamp(32px,6.2vw,54px);font-weight:900;line-height:1.14;letter-spacing:-.02em}
+  h2{font-size:clamp(26px,4.6vw,38px);font-weight:900;line-height:1.2;letter-spacing:-.015em;margin-bottom:16px}
+  h3{font-size:19px;font-weight:700;margin-bottom:7px}
+  .lead{font-size:clamp(17px,2.3vw,20px);max-width:62ch}
+  .accent{color:var(--pine)}
+
+  /* hero */
+  .hero{background:linear-gradient(165deg,#F4F8F5 0%,var(--wash) 100%);position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;inset:auto -15% -60% 40%;height:80%;
+       background:radial-gradient(closest-side,rgba(95,138,111,.16),transparent 70%);pointer-events:none}
+  .topbar{display:flex;align-items:center;justify-content:space-between;
+          padding:20px 0;border-bottom:1px solid var(--line)}
+  .mark{font-weight:900;font-size:19px;letter-spacing:-.01em}
+  .mark span{color:var(--pine)}
+  .tag{font-size:12.5px;font-weight:500;color:var(--muted)}
+  .hero-in{padding:60px 0 70px;position:relative;z-index:1}
+  .hero h1{margin-bottom:18px}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px}
+  .stat{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 14px;
+        text-align:center;box-shadow:0 2px 10px rgba(30,43,37,.04)}
+  .stat b{display:block;font-size:27px;font-weight:900;color:var(--pine);line-height:1.2}
+  .stat small{font-size:12.5px;color:var(--muted);display:block;margin-top:3px}
+
+  /* start steps */
+  .steps{display:grid;gap:12px;margin-top:30px}
+  .step{display:flex;gap:16px;align-items:flex-start;background:#fff;border:1px solid var(--line);
+        border-radius:16px;padding:18px 20px;box-shadow:0 2px 10px rgba(30,43,37,.04)}
+  .step .n{flex:none;width:32px;height:32px;border-radius:50%;background:var(--pine);color:#fff;
+           font-weight:900;font-size:15px;display:grid;place-items:center;margin-top:2px}
+  .step p{font-size:15.5px;color:var(--muted)}
+
+  /* timeline */
+  .tl{margin-top:34px;position:relative}
+  .tl::before{content:"";position:absolute;top:8px;bottom:8px;right:19px;width:2px;
+       background:linear-gradient(180deg,var(--pine),rgba(95,138,111,.18))}
+  .mt{position:relative;padding:0 56px 30px 0}
+  .mt:last-child{padding-bottom:0}
+  .mt .dot{position:absolute;right:6px;top:2px;width:28px;height:28px;border-radius:50%;
+       background:var(--pine);border:2px solid var(--pine);color:#fff;
+       font-size:12.5px;font-weight:900;display:grid;place-items:center}
+  .mt .k{font-size:12.5px;font-weight:700;color:var(--pine);letter-spacing:.08em;margin-bottom:2px}
+  .mt p{font-size:15.5px;color:var(--muted);max-width:60ch}
+  .mt .attach{margin-top:9px;display:flex;flex-wrap:wrap;gap:7px}
+  .chip{font-size:12.5px;font-weight:600;background:#fff;
+        border:1px solid rgba(95,138,111,.32);color:var(--pine-d);border-radius:999px;padding:4px 11px}
+
+  /* included */
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:14px;margin-top:30px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:24px 22px;
+        box-shadow:0 2px 10px rgba(30,43,37,.04)}
+  .card .ico{font-size:24px;margin-bottom:10px;display:block}
+  .card p{font-size:15px;color:var(--muted)}
+  .card.couples{border-color:rgba(95,138,111,.4);background:linear-gradient(180deg,#fff,#F5F9F6)}
+  .card .only{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.06em;
+        background:rgba(95,138,111,.13);color:var(--pine-d);border-radius:999px;
+        padding:3px 10px;margin-bottom:9px}
+
+  /* pricing */
+  .prices{display:grid;grid-template-columns:repeat(auto-fit,minmax(285px,1fr));gap:16px;margin-top:32px}
+  .price{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:28px 24px;
+         box-shadow:0 4px 18px rgba(30,43,37,.06)}
+  .price.feat{border-color:var(--pine);box-shadow:0 8px 26px rgba(95,138,111,.16)}
+  .price .who{font-size:13px;font-weight:700;letter-spacing:.1em;color:var(--pine);margin-bottom:12px}
+  .price .big{font-size:38px;font-weight:900;line-height:1.1}
+  .price .big small{font-size:20px;font-weight:700}
+  .price .sub{font-size:15px;color:var(--muted);margin-top:4px}
+  .price .one{margin-top:12px;font-size:15px;font-weight:600;color:var(--pine-d);
+        background:rgba(95,138,111,.09);border-radius:12px;padding:9px 13px}
+  .price ul{list-style:none;margin-top:16px;padding-top:16px;border-top:1px solid var(--line)}
+  .price li{font-size:15px;padding:5px 0;display:flex;gap:9px;color:var(--muted)}
+  .price li::before{content:"›";color:var(--pine);font-weight:900}
+  .note{margin-top:24px;font-size:14.5px;color:var(--muted);
+        border-right:2px solid var(--pine);padding-right:14px;max-width:64ch}
+
+  /* faq */
+  details{background:#fff;border:1px solid var(--line);border-radius:14px;
+          padding:16px 20px;margin-bottom:10px}
+  summary{font-weight:700;cursor:pointer;list-style:none;display:flex;
+          justify-content:space-between;align-items:center;gap:12px;font-size:16.5px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";color:var(--pine);font-weight:900;font-size:21px;flex:none}
+  details[open] summary::after{content:"–"}
+  details p{margin-top:10px;font-size:15.5px;color:var(--muted)}
+
+  /* cta */
+  .cta{text-align:center;background:linear-gradient(165deg,#F4F8F5,var(--wash))}
+  .cta .lead{margin:0 auto}
+  .btn{display:inline-block;background:var(--pine);color:#fff;text-decoration:none;
+       font-weight:700;font-size:17px;padding:16px 38px;border-radius:999px;margin-top:22px;
+       box-shadow:0 10px 26px rgba(95,138,111,.28);transition:transform .18s ease}
+  .btn:hover{transform:translateY(-2px)}
+  footer{background:var(--cream);border-top:1px solid var(--line);color:var(--muted);
+         text-align:center;padding:32px 0;font-size:13.5px}
+  footer b{color:var(--ink);display:block;font-size:16px;margin-bottom:4px}
+
+  @media(max-width:640px){
+    section{padding:54px 0}
+    .stats{grid-template-columns:repeat(2,1fr)}
+  }
+</style>
+<!-- ═══════════════════════════════════════════════════════════════════
+     ערכת נגישות לדפי נחיתה - קטע הקוד שמדביקים בכל דף
+     מדביקים פעם אחת בתוך <head> של כל דף באתר.
+     אחרי הרצת setup.py השתמשו בקובץ output/a11y-snippet-ready.html
+
+     Zero-impact by default (Eden's directive, page-standard.md):
+     - Regular visitors see ONLY a small round a11y button (bottom-left).
+     - Focus outline appears via :focus-visible - keyboard users only.
+     - Skip-link hidden until keyboard-focused.
+     - All visual adjustments (text size / contrast / links / motion /
+       readable font) apply ONLY when chosen; saved in localStorage.
+     - The menu links to the accessibility statement (legal requirement).
+     ═══════════════════════════════════════════════════════════════════ -->
+<style>
+  /* Keyboard-only focus - mouse users never see this */
+  :focus-visible { outline: 3px solid #4F46E5 !important; outline-offset: 2px !important; border-radius: 4px; }
+  /* Skip link - visible only on keyboard focus */
+  .brain-skip { position: fixed; top: -60px; right: 12px; z-index: 100000; background: #1E1B4B; color: #fff;
+    padding: 10px 18px; border-radius: 10px; font-size: 15px; text-decoration: none; transition: top .15s; }
+  .brain-skip:focus { top: 12px; }
+  /* Opt-in modes */
+  html.a11y-fs1 body { zoom: 1.12; } html.a11y-fs2 body { zoom: 1.25; }
+  html.a11y-contrast { filter: contrast(1.25); }
+  html.a11y-links a { text-decoration: underline !important; font-weight: 700 !important; }
+  html.a11y-nomotion *, html.a11y-nomotion *::before, html.a11y-nomotion *::after {
+    animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  html.a11y-font body, html.a11y-font body * { font-family: Arial, Helvetica, sans-serif !important; }
+  /* The button + menu */
+  #brain-a11y-btn { position: fixed; bottom: 18px; left: 18px; z-index: 99999; width: 44px; height: 44px;
+    border-radius: 50%; border: none; cursor: pointer; background: #1E1B4B; color: #fff;
+    display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 10px rgba(30,27,75,.35); padding: 0; }
+  #brain-a11y-btn:hover { background: #4F46E5; }
+  #brain-a11y-menu { position: fixed; bottom: 72px; left: 18px; z-index: 99999; background: #fff; color: #1E1B4B;
+    border-radius: 14px; box-shadow: 0 6px 30px rgba(30,27,75,.25); padding: 14px; width: 230px; display: none;
+    direction: rtl; text-align: right; font-family: Arial, sans-serif; font-size: 14px; }
+  #brain-a11y-menu.open { display: block; }
+  #brain-a11y-menu h2 { font-size: 15px; margin: 0 0 10px; }
+  #brain-a11y-menu button { display: block; width: 100%; margin: 4px 0; padding: 8px 10px; border-radius: 8px;
+    border: 1px solid #E0E7FF; background: #F8FAFC; cursor: pointer; font-size: 13px; text-align: right; color: #1E1B4B; }
+  #brain-a11y-menu button[aria-pressed="true"] { background: #4F46E5; color: #fff; border-color: #4F46E5; }
+  #brain-a11y-menu a { display: block; margin-top: 10px; font-size: 12px; color: #4F46E5; }
+</style>
+<script>
+(function () {
+  var MODES = [
+    ["fs", "הגדלת טקסט", 2],            // cycles: off → fs1 → fs2
+    ["contrast", "ניגודיות מוגברת", 1],
+    ["links", "הדגשת קישורים", 1],
+    ["nomotion", "עצירת אנימציות", 1],
+    ["font", "גופן קריא", 1]
+  ];
+  var KEY = "brain_a11y";
+
+  function state() { try { return JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) { return {}; } }
+  function apply(s) {
+    var h = document.documentElement;
+    h.classList.toggle("a11y-fs1", s.fs === 1); h.classList.toggle("a11y-fs2", s.fs === 2);
+    ["contrast", "links", "nomotion", "font"].forEach(function (m) { h.classList.toggle("a11y-" + m, !!s[m]); });
+  }
+
+  function build() {
+    if (document.getElementById("brain-a11y-btn")) return; // pasted twice - once is enough
+    // Skip link (target: <main> or first <h1>'s section)
+    if (!document.getElementById("brain-main")) {
+      var m = document.querySelector("main") || document.querySelector("h1");
+      if (m) m.id = m.id || "brain-main";
+    }
+    var skip = document.createElement("a");
+    skip.className = "brain-skip"; skip.href = "#" + ((document.querySelector("main,h1") || {}).id || "brain-main");
+    skip.textContent = "דילוג לתוכן"; document.body.prepend(skip);
+
+    var btn = document.createElement("button");
+    btn.id = "brain-a11y-btn"; btn.setAttribute("aria-label", "פתיחת תפריט נגישות");
+    btn.setAttribute("aria-expanded", "false"); btn.setAttribute("aria-controls", "brain-a11y-menu");
+    btn.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="4.5" r="2.2" fill="currentColor"/><path d="M12 8c-3 0-5.5-.6-7-1l.5 2c1.5.5 3.5.8 5 .9v3.1l-2.3 6.2 1.9.8 2-5.5h-.2 2.2l2 5.5 1.9-.8L15.5 13V9.9c1.5-.1 3.5-.4 5-.9l.5-2c-1.5.4-4 1-7 1h-2z" fill="currentColor"/></svg>';
+
+    var menu = document.createElement("div");
+    menu.id = "brain-a11y-menu"; menu.setAttribute("role", "dialog"); menu.setAttribute("aria-label", "אפשרויות נגישות");
+    menu.innerHTML = "<h2>נגישות</h2>";
+    MODES.forEach(function (mode) {
+      var b = document.createElement("button");
+      b.textContent = mode[1]; b.dataset.mode = mode[0]; b.setAttribute("aria-pressed", "false");
+      b.onclick = function () {
+        var s = state();
+        if (mode[0] === "fs") { s.fs = ((s.fs || 0) + 1) % 3; b.setAttribute("aria-pressed", s.fs ? "true" : "false"); }
+        else { s[mode[0]] = !s[mode[0]]; b.setAttribute("aria-pressed", s[mode[0]] ? "true" : "false"); }
+        localStorage.setItem(KEY, JSON.stringify(s)); apply(s);
+      };
+      menu.appendChild(b);
+    });
+    var reset = document.createElement("button");
+    reset.textContent = "איפוס"; reset.onclick = function () { localStorage.removeItem(KEY); apply({});
+      menu.querySelectorAll("[aria-pressed]").forEach(function (b) { b.setAttribute("aria-pressed", "false"); }); };
+    menu.appendChild(reset);
+    var link = document.createElement("a");
+    link.href = "negishut.html"; link.textContent = "הצהרת נגישות";
+    menu.appendChild(link);
+
+    // Permanent text link in the page footer (legal best practice: the statement
+    // must be reachable even if this widget fails to load elsewhere). Inherits
+    // the footer's own styling - visually just one more footer word.
+    var foot = document.querySelector("footer");
+    if (foot && !foot.querySelector('a[href*="negishut"]')) {
+      var fl = document.createElement("a");
+      fl.href = "negishut.html"; fl.textContent = "הצהרת נגישות";
+      fl.style.color = "inherit"; fl.style.marginRight = "6px";
+      foot.appendChild(document.createTextNode(" · "));
+      foot.appendChild(fl);
+    }
+
+    btn.onclick = function () {
+      var open = menu.classList.toggle("open");
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+    };
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && menu.classList.contains("open")) { menu.classList.remove("open"); btn.setAttribute("aria-expanded", "false"); btn.focus(); }
+    });
+    document.body.appendChild(btn); document.body.appendChild(menu);
+
+    // Restore saved prefs + reflect on buttons
+    var s = state(); apply(s);
+    menu.querySelectorAll("[data-mode]").forEach(function (b) {
+      var m = b.dataset.mode;
+      b.setAttribute("aria-pressed", (m === "fs" ? !!s.fs : !!s[m]) ? "true" : "false");
+    });
+  }
+
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", build);
+  else build();
+})();
+</script>
+
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="topbar">
+      <div class="mark">Rich<span>Life</span></div>
+      <div class="tag">ליווי פיננסי אישי · טלי בנימינוב</div>
+    </div>
+    <div class="hero-in">
+      <div class="eyebrow">תהליך סוויץ'</div>
+      <h1>כל התהליך שלנו,<br><span class="accent">במקום אחד.</span></h1>
+      <p class="lead muted">דיברנו, ואני רוצה שתדעו בדיוק למה נכנסים: מה קורה בכל פגישה, מה מקבלים בדרך, וכמה זה עולה. בלי אותיות קטנות.</p>
+      <div class="stats">
+        <div class="stat"><b>7</b><small>פגישות אישיות</small></div>
+        <div class="stat"><b>6</b><small>חודשי ליווי</small></div>
+        <div class="stat"><b>6</b><small>שכבות פיננסיות</small></div>
+        <div class="stat"><b>60</b><small>דקות כל פגישה</small></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">// לפני שמתחילים</div>
+    <h2>איך יוצאים לדרך</h2>
+    <p class="lead muted">ברגע שאומרים כן, יש חמישה דברים קטנים לסמן וי. הם לוקחים בערך שעה בסך הכל, והם מה שהופך את הפגישה הראשונה לפגישה שכבר מקדמת אתכם.</p>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><div><h3>חתימה על הסכם ההתקשרות</h3><p>נשלח אליכם בוואטסאפ, נחתם דיגיטלית מהנייד. יש בו סעיף יציאה, כדי שתישארו כי זה עובד ולא כי חתמתם.</p></div></div>
+      <div class="step"><div class="n">2</div><div><h3>תיאום הפגישה הראשונה</h3><p>בוחרים שעה שנוחה מהיומן שלי. משם והלאה כל פגישה נקבעת מראש, ואתם לא צריכים לרדוף אחריי.</p></div></div>
+      <div class="step"><div class="n">3</div><div><h3>מילוי שאלון הכניסה</h3><p>יעדים והיכרות. זה מה שמאפשר לי להגיע לפגישה הראשונה כשאני כבר מכירה אתכם ואת מה שחשוב לכם.</p></div></div>
+      <div class="step"><div class="n">4</div><div><h3>איסוף המסמכים</h3><p>פירוט אשראי ועובר ושב של 3 חודשים, תלושים, הר הכסף, הר הביטוח, דוח נתוני אשראי, והלוואות אם יש. יש רשימה מלאה עם הסבר איפה מוצאים כל דבר. חשוב שיגיעו שבוע לפני הפגישה הראשונה, כדי שאספיק לעבור עליהם לעומק.</p></div></div>
+      <div class="step"><div class="n">5</div><div><h3>פתיחת הקורס הדיגיטלי</h3><p>קורס "התנהלות כלכלית" נפתח לכם במייל ומלווה אתכם לצד הפגישות, בקצב שלכם.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="tint">
+  <div class="wrap">
+    <div class="eyebrow">// המסע, פגישה אחרי פגישה</div>
+    <h2>שש תחנות מבלגן <span class="accent">לשליטה.</span></h2>
+    <p class="lead muted">לא קופצים ישר להשקעות. בונים לפי הסדר, ככה שכל שלב מחזיק את הבא אחריו.</p>
+
+    <div class="tl">
+      <div class="mt"><div class="dot">1</div>
+        <div class="k">שלב 01 · מטרות</div>
+        <h3>לאן בכלל רוצים להגיע</h3>
+        <p>מתחילים מהתמונה הגדולה: מה חשוב לכם, ולאן הכסף אמור לקחת אתכם. בלי יעד, כל תקציב הוא ניחוש. במקביל אני מציגה לכם את המפה הפיננסית שבניתי מהמסמכים שלכם, ורואים לראשונה את כל התמונה במקום אחד.</p>
+        <div class="attach"><span class="chip">מפה פיננסית אישית</span><span class="chip">שאלון יעדים</span><span class="chip">עבודה סביב אמונות</span></div>
+      </div>
+      <div class="mt"><div class="dot">2</div>
+        <div class="k">שלב 02 · תקציב</div>
+        <h3>לחבר את הכסף למציאות</h3>
+        <p>רואים בדיוק כמה נכנס, כמה יוצא ומה נשאר, ובונים תקציב שמתאים לחיים שלכם ולא לטבלה. בלי אשמה, פשוט אור על מה שקורה באמת.</p>
+        <div class="attach"><span class="chip">קובץ תקציב אישי</span><span class="chip">מעקב חודשי</span></div>
+      </div>
+      <div class="mt"><div class="dot">3</div>
+        <div class="k">שלב 03 · רשת ביטחון</div>
+        <h3>כרית לימים של גשם</h3>
+        <p>בונים קרן חירום, מסדרים את מסגרת האשראי ומטפלים בהלוואות אם יש. המטרה שתקלה קטנה בחיים לא תזרוק אתכם אחורה ותחזיר את הלחץ.</p>
+        <div class="attach"><span class="chip">שאלון אמצע תהליך</span></div>
+      </div>
+      <div class="mt"><div class="dot">4</div>
+        <div class="k">שלב 04 · הגנה</div>
+        <h3>לסגור את החורים השקטים</h3>
+        <p>עוברים על הפנסיה, קרן ההשתלמות והביטוחים. מתקנים מסלולים, מורידים דמי ניהול, ומוודאים שאתם לא מדממים כסף בשקט על דברים שאפשר לתקן היום.</p>
+        <div class="attach"><span class="chip">בדיקת פנסיה ומסלולים</span><span class="chip">מיפוי ביטוחים</span></div>
+      </div>
+      <div class="mt"><div class="dot">5</div>
+        <div class="k">שלב 05 · השקעות</div>
+        <h3>שהכסף יתחיל לעבוד</h3>
+        <p>כאן הכסף מתחיל לעבוד בשבילכם. פותחים תיק השקעות שמתאים לכם, בשפה שאתם מבינים, ואתם יודעים בדיוק מה קניתם ולמה.</p>
+        <div class="attach"><span class="chip">פתיחת תיק השקעות</span><span class="chip">קורס השקעות מותאם</span><span class="chip">קרנות ייעודיות ליעדים</span></div>
+      </div>
+      <div class="mt"><div class="dot">6</div>
+        <div class="k">שלב 06 · אוטומציה</div>
+        <h3>שהכל ירוץ כמעט לבד</h3>
+        <p>מסדרים שחיסכון והשקעה יקרו כל חודש כמעט מעצמם. בפגישה האחרונה מסתכלים אחורה על כל הדרך, רואים בשחור על לבן מה השתנה, וקובעים לאן ממשיכים מכאן.</p>
+        <div class="attach"><span class="chip">הוראות קבע אוטומטיות</span><span class="chip">שאלון סיכום</span><span class="chip">סיכום תהליך כתוב</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">// מה מקבלים</div>
+    <h2>לא רק פגישות.</h2>
+    <p class="lead muted">כל מה שצריך כדי שהשינוי באמת יקרה, ולא יישאר עוד רשימת כוונות טובות.</p>
+    <div class="cards">
+      <div class="card"><span class="ico">🗓️</span><h3>7 פגישות אישיות</h3><p>אחד על אחד בזום, שעה כל אחת, לאורך חצי שנה. כל פגישה מקדמת אתכם שלב אמיתי קדימה.</p></div>
+      <div class="card"><span class="ico">🗺️</span><h3>מפה פיננסית אישית</h3><p>מסמך כתוב שמסדר את כל התמונה הכספית שלכם במקום אחד, ברור ופשוט להסתכל עליו.</p></div>
+      <div class="card"><span class="ico">💬</span><h3>ליווי בין הפגישות</h3><p>שאלה שצצה באמצע השבוע? אני בוואטסאפ. לא נעלמת עד הפגישה הבאה.</p></div>
+      <div class="card"><span class="ico">📊</span><h3>קבצי מעקב אישיים</h3><p>קבצי תקציב ומעקב שאני בונה ומתאימה לכם, ושבהם אתם עוקבים חודש אחרי חודש. פשוטים, ואתם באמת משתמשים בהם.</p></div>
+      <div class="card"><span class="ico">🎓</span><h3>קורס דיגיטלי מלווה</h3><p>קורס "התנהלות כלכלית" שמלווה אתכם לצד הפגישות, בקצב שלכם, מתי שנוח.</p></div>
+      <div class="card"><span class="ico">📈</span><h3>קורסי השקעות לפי המסלול שלכם</h3><p>כשמגיעים לשלב ההשקעות, מצרפת את הקורס שמתאים לדרך שבחרנו עבורכם: "השקעה בקלות" או "מאפס לתיק השקעות".</p></div>
+      <div class="card"><span class="ico">🧠</span><h3>עבודה סביב אמונות</h3><p>לא כל חסם כלכלי הוא טכני. עובדים גם על מה שאתם מאמינים על כסף, מאיפה זה הגיע, ומה מזה כבר לא משרת אתכם. זה מה שגורם לשינוי להחזיק גם אחרי שהתהליך נגמר.</p></div>
+      <div class="card"><span class="ico">📝</span><h3>סיכום כתוב אחרי כל פגישה</h3><p>מה עשינו, מה הוחלט ומה המשימות עד הפעם הבאה. הכל מרוכז אצלכם, ואי אפשר לשכוח.</p></div>
+      <div class="card couples"><span class="ico">💞</span><span class="only">רק בליווי הזוגי</span><h3>קורס "צוות מנצח"</h3><p>איך מדברים על כסף בזוגיות בלי שזה נגמר בריב. קורס שלם על תקשורת נכונה סביב כסף, כי רוב המריבות על כסף הן בכלל לא על הכסף.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="tint" id="price">
+  <div class="wrap">
+    <div class="eyebrow">// ההשקעה</div>
+    <h2>כמה זה עולה</h2>
+    <p class="lead muted">מחיר אחד, כולל הכל. אין תוספות בדרך ואין הפתעות באמצע התהליך.</p>
+
+    <div class="prices">
+      <div class="price feat">
+        <div class="who">ליווי אישי</div>
+        <div class="big">6,600 <small>₪</small></div>
+        <div class="sub">בפריסה ל-6 תשלומים של 1,100 ₪</div>
+        <div class="one">בתשלום אחד: 6,000 ₪</div>
+        <ul>
+          <li>7 פגישות אישיות לאורך חצי שנה</li>
+          <li>מפה פיננסית, קבצי מעקב וקורסים דיגיטליים</li>
+          <li>ליווי בוואטסאפ גם בין הפגישות</li>
+        </ul>
+      </div>
+      <div class="price">
+        <div class="who">ליווי זוגי</div>
+        <div class="big">7,500 <small>₪</small></div>
+        <div class="sub">בפריסה ל-6 תשלומים של 1,250 ₪</div>
+        <div class="one">בתשלום אחד: 7,000 ₪</div>
+        <ul>
+          <li>7 פגישות משותפות לאורך חצי שנה</li>
+          <li>כל מה שיש בליווי האישי, לשניכם</li>
+          <li>בנוסף: קורס "צוות מנצח" על כסף בזוגיות</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="note">התשלום בכרטיס אשראי או בהוראת קבע בנקאית. אפשר לפרוס אחרת אם צריך, פשוט תגידו לי ונמצא מה שנכון לכם.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">// שאלות שחוזרות</div>
+    <h2>מה שכולם שואלים</h2>
+    <div style="margin-top:26px">
+      <details><summary>כמה זמן זה לוקח בפועל?</summary><p>בערך חצי שנה. הפגישה השנייה כשבועיים אחרי הראשונה, ומשם בערך פגישה כל חמישה שבועות. הקצב הזה נותן לכם זמן ליישם בין פגישה לפגישה, וזה בדיוק מה שגורם לזה להחזיק.</p></details>
+      <details><summary>כמה עבודה זה דורש ממני?</summary><p>בערך שעה בשבוע. יש קורסים לצפות בהם לצד הפגישות, ויש מעקב תקציב שוטף. בהתחלה יש גם הכנה חד פעמית של איסוף המסמכים. זה לא מעט, אבל זה שעה בשבוע שמשנה לכם את התמונה הכלכלית לשנים קדימה.</p></details>
+      <details><summary>הכל אונליין?</summary><p>כן, כל הפגישות בזום, שעה כל אחת, מכל מקום שנוח לכם.</p></details>
+      <details><summary>מה אם אני צריכה לדחות פגישה?</summary><p>קורה, פשוט מעדכנים מראש ומוצאים מועד אחר. התהליך לא נשבר מזה.</p></details>
+      <details><summary>אנחנו זוג, שנינו חייבים להיות בכל פגישה?</summary><p>עדיף מאוד. כל הרעיון בליווי הזוגי הוא ששניכם על אותו עמוד ומקבלים את ההחלטות ביחד, וזה גם מה שקורס "צוות מנצח" בא לחזק.</p></details>
+      <details><summary>ומה קורה כשהתהליך נגמר?</summary><p>אתם יוצאים עם תקציב שעובד, רשת ביטחון, תיק השקעות ותוכנית כתובה. למי שרוצה להמשיך במעקב תקופתי יש מסלול המשך, ומדברים עליו רק בפגישה האחרונה.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <div class="eyebrow" style="text-align:center">// הצעד הבא</div>
+    <h2>יש שאלה? <span class="accent">כתבו לי.</span></h2>
+    <p class="lead muted">כל שאלה על התהליך, על הקצב או על התשלום. אני כאן, ואני רוצה שתיכנסו לזה בראש שקט.</p>
+    <a class="btn" href="https://wa.me/972544563628">לדבר איתי בוואטסאפ</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <b>RichLife</b>
+    טלי בנימינוב · ליווי פיננסי אישי
+  </div>
+</footer>
+
+</body>
+</html>
