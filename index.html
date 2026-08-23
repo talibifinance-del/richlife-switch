@@ -49,21 +49,25 @@
   .stat b{display:block;font-size:27px;font-weight:900;color:var(--pine);line-height:1.2}
   .stat small{font-size:12.5px;color:var(--muted);display:block;margin-top:3px}
 
-  /* start steps (accordion) */
-  .steps{display:grid;gap:10px;margin-top:28px}
-  .step{background:#fff;border:1px solid var(--line);border-radius:16px;
-        box-shadow:0 2px 10px rgba(30,43,37,.04);overflow:hidden}
-  .step > summary{display:flex;gap:14px;align-items:center;padding:15px 18px;
-        cursor:pointer;list-style:none;font-size:17px;font-weight:700}
-  .step > summary::-webkit-details-marker{display:none}
-  .step .n{flex:none;width:29px;height:29px;border-radius:50%;background:var(--pine);color:#fff;
-           font-weight:900;font-size:14px;display:grid;place-items:center}
-  .step .ttl{flex:1}
-  .step .plus{flex:none;color:var(--pine);font-weight:900;font-size:20px;line-height:1}
-  .step[open] .plus::before{content:"–"}
-  .step .plus::before{content:"+"}
-  .step .body{padding:0 18px 17px 18px;margin-right:43px}
-  .step .body p{font-size:15.5px;color:var(--muted)}
+  /* one opener that reveals all five steps */
+  .opener{background:#fff;border:1px solid var(--line);border-radius:var(--r);
+        box-shadow:0 2px 12px rgba(30,43,37,.05)}
+  .opener > summary{display:flex;gap:16px;align-items:center;padding:22px 24px;
+        cursor:pointer;list-style:none}
+  .opener > summary::-webkit-details-marker{display:none}
+  .opener .txt{flex:1}
+  .opener .txt b{display:block;font-size:clamp(22px,3.6vw,30px);font-weight:900;letter-spacing:-.015em}
+  .opener .txt em{display:block;font-style:normal;font-size:15.5px;color:var(--muted);margin-top:3px}
+  .opener .plus{flex:none;width:38px;height:38px;border-radius:50%;background:rgba(95,138,111,.11);
+        color:var(--pine);display:grid;place-items:center;font-size:23px;font-weight:900;line-height:1}
+  .opener .plus::before{content:"+"}
+  .opener[open] .plus::before{content:"–"}
+  .steps{display:grid;gap:12px;padding:0 24px 24px 24px}
+  .step{display:flex;gap:16px;align-items:flex-start;background:var(--cream);
+        border-radius:14px;padding:17px 19px}
+  .step .n{flex:none;width:30px;height:30px;border-radius:50%;background:var(--pine);color:#fff;
+           font-weight:900;font-size:14px;display:grid;place-items:center;margin-top:2px}
+  .step p{font-size:15.5px;color:var(--muted)}
 
   /* timeline */
   .tl{margin-top:34px;position:relative}
@@ -117,11 +121,11 @@
   /* faq */
   details{background:#fff;border:1px solid var(--line);border-radius:14px;
           padding:16px 20px;margin-bottom:10px}
-  details:not(.step) > summary{font-weight:700;cursor:pointer;list-style:none;display:flex;
+  details:not(.opener) > summary{font-weight:700;cursor:pointer;list-style:none;display:flex;
           justify-content:space-between;align-items:center;gap:12px;font-size:16.5px}
   summary::-webkit-details-marker{display:none}
-  details:not(.step) > summary::after{content:"+";color:var(--pine);font-weight:900;font-size:21px;flex:none}
-  details:not(.step)[open] > summary::after{content:"–"}
+  details:not(.opener) > summary::after{content:"+";color:var(--pine);font-weight:900;font-size:21px;flex:none}
+  details:not(.opener)[open] > summary::after{content:"–"}
   details p{margin-top:10px;font-size:15.5px;color:var(--muted)}
 
   /* cta */
@@ -295,27 +299,26 @@
   </div>
 </header>
 
-<section>
+<section class="tint">
   <div class="wrap">
     <div class="eyebrow">// לפני שמתחילים</div>
-    <h2>איך יוצאים לדרך</h2>
-    <p class="lead muted">חמישה דברים לסמן וי, בערך שעה בסך הכל. לחצו על כל שלב לפרטים.</p>
-    <div class="steps">
-      <details class="step" name="onboarding"><summary><span class="n">1</span><span class="ttl">חתימה על הסכם ההתקשרות</span><span class="plus"></span></summary>
-        <div class="body"><p>נשלח אליכם בוואטסאפ, נחתם דיגיטלית מהנייד. יש בו סעיף יציאה, כדי שתישארו כי זה עובד ולא כי חתמתם.</p></div></details>
-      <details class="step" name="onboarding"><summary><span class="n">2</span><span class="ttl">תיאום הפגישה הראשונה</span><span class="plus"></span></summary>
-        <div class="body"><p>בוחרים שעה שנוחה מהיומן שלי. משם והלאה כל פגישה נקבעת מראש, ואתם לא צריכים לרדוף אחריי.</p></div></details>
-      <details class="step" name="onboarding"><summary><span class="n">3</span><span class="ttl">מילוי שאלון הכניסה</span><span class="plus"></span></summary>
-        <div class="body"><p>יעדים והיכרות. זה מה שמאפשר לי להגיע לפגישה הראשונה כשאני כבר מכירה אתכם ואת מה שחשוב לכם.</p></div></details>
-      <details class="step" name="onboarding"><summary><span class="n">4</span><span class="ttl">איסוף המסמכים</span><span class="plus"></span></summary>
-        <div class="body"><p>פירוט אשראי ועובר ושב של 3 חודשים, תלושים, הר הכסף, הר הביטוח, דוח נתוני אשראי, והלוואות אם יש. תקבלו רשימה מלאה עם הסבר איפה מוצאים כל דבר. חשוב שיגיעו שבוע לפני הפגישה הראשונה, כדי שאספיק לעבור עליהם לעומק.</p></div></details>
-      <details class="step" name="onboarding"><summary><span class="n">5</span><span class="ttl">פתיחת הקורס הדיגיטלי</span><span class="plus"></span></summary>
-        <div class="body"><p>קורס "התנהלות כלכלית" נפתח לכם במייל ומלווה אתכם לצד הפגישות, בקצב שלכם.</p></div></details>
-    </div>
+    <details class="opener">
+      <summary>
+        <span class="txt"><b>איך יוצאים לדרך</b><em>חמישה דברים לסמן וי, בערך שעה בסך הכל</em></span>
+        <span class="plus"></span>
+      </summary>
+      <div class="steps">
+        <div class="step"><div class="n">1</div><div><h3>חתימה על הסכם ההתקשרות</h3><p>נשלח אליכם בוואטסאפ, נחתם דיגיטלית מהנייד. יש בו סעיף יציאה, כדי שתישארו כי זה עובד ולא כי חתמתם.</p></div></div>
+        <div class="step"><div class="n">2</div><div><h3>תיאום הפגישה הראשונה</h3><p>בוחרים שעה שנוחה מהיומן שלי. משם והלאה כל פגישה נקבעת מראש, ואתם לא צריכים לרדוף אחריי.</p></div></div>
+        <div class="step"><div class="n">3</div><div><h3>מילוי שאלון הכניסה</h3><p>יעדים והיכרות. זה מה שמאפשר לי להגיע לפגישה הראשונה כשאני כבר מכירה אתכם ואת מה שחשוב לכם.</p></div></div>
+        <div class="step"><div class="n">4</div><div><h3>איסוף המסמכים</h3><p>פירוט אשראי ועובר ושב של 3 חודשים, תלושים, הר הכסף, הר הביטוח, דוח נתוני אשראי, והלוואות אם יש. תקבלו רשימה מלאה עם הסבר איפה מוצאים כל דבר. חשוב שיגיעו שבוע לפני הפגישה הראשונה, כדי שאספיק לעבור עליהם לעומק.</p></div></div>
+        <div class="step"><div class="n">5</div><div><h3>פתיחת הקורס הדיגיטלי</h3><p>קורס "התנהלות כלכלית" נפתח לכם במייל ומלווה אתכם לצד הפגישות, בקצב שלכם.</p></div></div>
+      </div>
+    </details>
   </div>
 </section>
 
-<section class="tint">
+<section>
   <div class="wrap">
     <div class="eyebrow">// המסע, פגישה אחרי פגישה</div>
     <h2>שש תחנות מבלגן <span class="accent">לשליטה.</span></h2>
@@ -446,20 +449,5 @@
   </div>
 </footer>
 
-<script>
-// אקורדיון אחד-בכל-רגע (גיבוי לדפדפנים שלא תומכים ב-name על details)
-(function(){
-  var steps = document.querySelectorAll('details.step');
-  if (!steps.length) return;
-  var supported = 'name' in document.createElement('details');
-  if (supported) return;
-  steps.forEach(function(d){
-    d.addEventListener('toggle', function(){
-      if (!d.open) return;
-      steps.forEach(function(o){ if (o !== d) o.open = false; });
-    });
-  });
-})();
-</script>
 </body>
 </html>
